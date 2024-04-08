@@ -1,68 +1,94 @@
-# 1. html에 script 써보기
-```html
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트 스터디</title>
-</head>
-<body>
-    <p id="show"></p>
-    <script>
-        document:getElementById("show").innerHTML = "안녕하세요.";
-    </script>
-</body>
-</html>
-```
+# 3. 데이터형(Data Type)
 
-## 1.1 데이터 출력
-- innerHTML : 브라우저 안에 있는 HTML 요소에 데이터 출력
-- document.write() : 브라우저에 간단한 데이터 출력
-- alert() : 알림창에 데이터 출력
-- console.log() : 브라우저 콘솔에 데이터 출력
+- number : 숫자
+- string : 문자
+- boolean : 참, 거짓 (true/false)
+- null
+- undefined
+- bigint
+- object
+- symbol
 
-### 1.1
+## 3.1 숫자 number
 
 ```js
- <script>
-        document:write(10 +20);
-    </script>
+const a = 3; // 정수(integer)
+const b = 5.7 // 부동 소수점 숫자 (flooting point number)
+const c = 123e3 // 123000
+const d = 123e-3; // 0.123
+
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(d);
 ```
 
-### 1.1.3 alert()
+## bigint
 
-- 브라우저 개발자 도구 console에 출력
+- 정수는 15개의 숫자, 15자리 정수까지 나타낼 수 있다.
+- 그 이상의 정수를 사용하려면 bigint 형 사용해야한다.
 
 ```js
-<script>console.log(10 + 20);</script>
+const e = 99999999999998765n;
+console.log(e);
 ```
 
-## 2.1 변수 선언
-
-- var, let, const 키워드
-- const를 주로 사용하고 안되면 let으로 바꾸자
+## 문자열 string
 
 ```js
-let name = "키워드 let으로 변수 name을 선언";
-       console.Log(name);
-       // 필요에 따라 값을 재할당 할 수 있다.
-       keyword = "변수 name에 홍길동 저장 name은 홍길동 값을 가짐";
-       console.Log(keyword);
+// 문자열
+const text1 = "사 과"; // 큰 따옴표 사용
+console.log("text1에 저장된 내용: ", text1);
+
+// 문자열의 Length 프로퍼티 사용, 공백도 포함
+console.log("text1의 문자열 길이는" + " " + text1.length + "입니다.");
+
+// 템플릿 문자열 ``
+let username = "홍길동";
+let age = 30;
+
+let text2 = "이름:" + username + "나이:" + age;
+console.log(text2);
+
+let text3 = `이름: ${username}, 나이: ${age}`;
+console.log(text3);
 ```
 
-## 2.2 변수 이름 짓기
-
-- 변수 이름에는 영어, 숫자, 밑줄, $ 사용 가능
-- **숫자로 시작하면 안됨**
-- 대소문자 구분
-- 일반적으로 카멜케이스 사용
+## boolean
 
 ```js
-const a = 5;
-const font1 = "돋움"
-const _price = 30000;
-const maxwidth = 600;
-cons max_width = 800;
+let x = 5 > 3; // true
+let y = 5 < 3; //false
+
+console.log(x);
+console.log(y);
 ```
+
+## undefined, null
+
+```js
+let x;
+let y = "";
+
+console.log(x);
+console.log(typeof y);
+```
+
+## 객체 object
+
+```js
+const member = {
+       id: "kdhong",
+       name: "홍길동",
+       age: 20, 
+};
+
+console.log("아이디: ", member.id);
+console.log(member.age);
+console.log(member.name);
+```
+
+## 심볼 symbol
+- number, string, boolean과 같은 원시데이터
+- 유일한 식별자로서 객체의 속성을 추가하는데 사용
 
