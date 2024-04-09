@@ -57,3 +57,26 @@ let name = "홍길동";
 
 ## 4.3 비교연산자
 
+```js
+let a = 3,
+b = "3",
+c = 5,
+d = 3;
+
+console.log(a == b); // true
+console.log(a === b); // false
+console.log(a != b); // false
+console.log(a !== b); // true
+console.log(a > c); // false
+console.log(a < c); // true
+console.log(a >= c); // false 
+console.log(a <= c); // true 
+console.log(a >= c); // false
+console.log(a <= c); // true
+```
+
+## 4.4 논리연산자
+
+- && : AND 두 조건이 모두 true일 경우에만 최종결과 true
+- || : OR 두 조건 중 하나만 true가 되어도 최종결과 true
+- ! : NOT 결과가 true인 경우 false, 반대로 false인 경우 true
