@@ -71,3 +71,24 @@ if (scroe >= 70) {
 console.log(result);
 ```
 
+# 7. switch 문
+
+- if 문과 거의 같은 방식으로 동작
+
+```js
+// 괄호 안에 있는 변수의 값에 따라
+switch(변수){
+       // 해당 case에 있는 문장들이 실행
+       case 값1:
+              문장;
+              ...
+              return;
+       case 값2:
+              문장;
+              ...
+              break;
+       default;
+              문장;
+}
+```
+
