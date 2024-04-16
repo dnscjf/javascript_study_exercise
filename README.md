@@ -16,50 +16,49 @@
 
 ```js
 // 웹 페이지 있는 <p> 요소의 내용 변경
-// Documnet 객체의 getElementById("show")는 웹 페이지에서 아이디 "show"
-// 즉, <p> 요소를 가져온다.
-// innerHTML 에 "안녕!" 을 설정함으로써
-// 단락 p의 내용을 "안녕!"으로 변경
+// Document 객체의 getElementById("show")는 웹 페이지에서 아이디 "show"
+// 즉 <p> 요소를 가져온다.
+// innerHTML 에 "안녕!"을 설정함으로써
+// 단락 p 의 내용을 "안녕!" 으로 변경
 // DOM method: getElementById()
 // DOM property: innerHTML
-
-document.getElementById("Show").innerHTML = "안녕!";
+document.getElementById("show").innerHTML = "안녕!";
 
 // 문서가 로드될 때 글 제목 요소 h1을 생성하는 예
 // 1. window 객체의 onload() 메서드는
 // 자바스크립트 문서가 로드될 때 자동으로 호출
-window.onload = function() {
-
-    // 2. h1 요소를 생성하여 변수 element 에 저장
-    let element = document.createElement("h1");
-
-    // 3. "글 제목"이란 텍스트 노드를 생성하여 변수 text에 저장
-    let text = document.createTextNode("글 제목");
-
-    // 4. element 요소가 가리키는 h1 요소에 text, 즉, "글 제목"을 추가
-    element.appendChild(text);
-
-    // 5. document 객체의 body 요소에 element를 추가
-    document.body.appendChild(element);
+window.onload = function () {
+  // 2. h1 요소를 생성하여 변수 element에 저장
+  let element = document.createElement("h1");
+  // 3. "글 제목"이란 텍스트 노드를 생성하여 변수 text에 저장
+  let text = document.createTextNode("글 제목");
+  // 4. element 요소가 가리키는 h1 요소에 text, 즉 "글 제목"을 추가
+  element.appendChild(text);
+  // 5. Document 객체의 body 요소에 element를 추가
+  document.body.appendChild(element);
 };
 ```
 
 ## 14.3 Document 객체
 
-- DOM의 Document 객체는 웹 페이지에 있는 모든 객체들의 소유주
-- 웹 페이지에 있는 요소들에 접근하기 위해 Documnet 객체로부터 시작해서 해당 요소를 찾아간다.
+- DOM의 Documnet 객체는 웹 페이지에 있는 모든 객체들의 소유주
+- 웹 페이지에 있는 요소들에 접근하기 위해 Document객체로부터 시작해서 해당 요소를 찾아간다.
 
 ```html
- <form name="form1">
-      이름: <input type="text" name="name" /> <br>
-      <button oneclick="get_name()">버튼</button>
-    </form>
+<body>
+  <form name="form1">
+    이름: <input type="text" name="name" /> <br />
+    <button onclick="get_name()">버튼</button>
+  </form>
+
+  <script src="js/dom.js"></script>
+</body>
 ```
 
 ```js
 function get_name() {
-    let text = document.form1.name.value;
-    alert(text);
-};
+  let text = document.form1.name.value;
+  alert(text);
+}
 ```
 
