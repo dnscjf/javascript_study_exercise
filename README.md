@@ -1,121 +1,14 @@
-# 13. 배열
+# 14. 문서 객체 모델 DOM
 
-## 13.1 배열이란?
+- HTML 문서의 구조화된 표현
+- DOM 구조에 접근하여 HTML 문서의 구조, 스타일, 내용 등을 변경
+- DOM은 웹 페이지, 즉, HTML 문서에 접근하여 문서를 읽고 조작할 수 있는 API(Applicaton Progrmming Interface)를 제공하는 인터페이스라고 할 수 있다.
+- DOM은 자바스크립 언어와는 독립적인 구조를 가지고 있다.
 
-- 여러 값을 하나의 변수에 저장할 수 있게 해주는 특별한 변수 array
 
-### 13.1.1 배열의 생성
+## 14.1 DOM의 구조
 
-```js
-const fruits = ["사과", "딸기", "참외"];
-
-let text = "";
-text += fruits;
-text += fruits[0];
-text += fruits[1];
-text += fruits[2];
-
-console.log(text);
-
-const fruits1 = new Array("오렌지", "사과", "딸기", "참외");
-console.log(fruits1);
-```
-
-### 13.1.2 배열 요소의 메서드
-
-- join() 메서드 : 배열을 문자열로 변환하는데 사용
-
-```js
-const animals = ["사자", "호랑이", "사슴", "펭귄"];
-
-let str1 = animals.join();
-let str2 = animals.join("/");
-
-console.log(str1);
-console.log(str2);
-```
-
-- push() 메서드 : 배열의 끝에 새로운 요소를 추가하는데 사용
-
-```js
-const animals = ["사자", "호랑이", "사슴", "펭귄"];
-
-let x = animals.push("도마뱀");
-
-let text = "";
-text += animals;
-
-console.log(text);
-```
-
-- pop() 메서드 : 배열의 마지막 요소를 삭제하는데 사용
-
-```js
-const animals = ["사자", "호랑이", "사슴", "펭귄"];
-let x = animals.pop();
-
-let text = "";
-text += animals;
-
-console.log(text);
-```
-
-- shift() 메서드 : 배열의 첫 요소를 삭제
-
-```js
-const animals = ["사자", "호랑이", "사슴", "펭귄"];
-let x = animals.shift();
-
-let text = "";
-text += animals;
-
-console.log(text);
-```
-
-- **splice()** 메서드 : 배열에 요소를 추가하거나 삭제할 때 사용
-
-```js
-const animals = ["사자", "호랑이", "사슴", "펭귄", "여우", "도마뱀"];
-
-let text = "";
-let arr;
-// 인덱스 2인 요소 "사슴" 부터 3개의 요소를 삭제하고 "개구리" 삽입
-arr = animals.splice(2, 3, "개구리");
-
-console.log(animals);
-console.log(arr);
-```
-
-- **indexOf()** 메서드 : 배열에서 특정 문자열의 위치, 즉 인덱스 값을 반환
-
-```js
-const animals = ["사자", "호랑이", "사슴", "펭귄", "여우", "도마뱀"];
-
-let index1 = animals.indexOf("사슴");
-
-console.log(index1);
-```
-
-- **includes()** 메서드 : 특정 요소의 존재 여부를 파악
-
-```js
-const animals = ["사자", "호랑이", "사슴", "펭귄", "여우", "도마뱀"];
-
-const result = animals.includes("악어");
-
-console.log(result); // false
-```
-
-- **slice()** 메서드 : 인덱스를 이용하여 특정 요소를 추출
-
-```js
-const animals = ["사자", "호랑이", "사슴", "펭귄", "여우", "도마뱀"];
-
-// 인덱스 1부터 인덱스 4 사이(4는 포함하지 않음)의 요소
-const result = animals.slice(1, 4);
-
-console.log(result);
-```
-
-- **find()** 메서드 : 특정 요소를 찾는 조건을 콜백 함수를 통해 전달하여 조건에 해당하는 첫 번째 요소 값을 반환
-
+- HTML요소(element), 속성(attribute), 내용(content) 등으로 구성된 트리 구조
+- 웹 페이지 요소들과 요소들에 관련된 정보를 트리 형태로 가지고 있다.
+- 모든 HTML 요소들은 객체로 정의된다.
+- 자바스크립트에서는 DOM에서 제공하는 메서드(method)와 프로퍼티(property)를 통하여 HTML 요소들에 접근하거나 요소들을 수정할 수 있다.
